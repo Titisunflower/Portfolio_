@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import { heroIcons } from "@/assets";
 
 const Hero = () => {
   return (
@@ -21,7 +22,11 @@ const Hero = () => {
           <p className="text-lg tracking-wider text-gray-700">I Like Animations 🥰</p>
         </div>
         <div>
-            <a href="">icon</a>
+            {heroIcons.map((icon, i) => (
+            <a href="#" key={i}>
+                {icon}
+            </a>
+            ))}
         </div>
         <a href="" className="mx-auto mt-7 block w-max rounded-lg bg-customPurple px-3 py-1 font-light capitalize tracking-wider hover:bg-purple-400 transition-colors">Let's Connect</a>
       </div>
