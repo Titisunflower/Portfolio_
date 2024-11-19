@@ -1,17 +1,37 @@
 "use client";
 import Image from "next/image";
 import { heroIcons } from "@/assets";
-import { useMotionValue } from "framer-motion";
+import { useMotionValue, useTransform } from "framer-motion";
+import { useState } from "react"
 
 const Hero = () => {
+    const [windowOffset, setWindowOffset] = useState({ innerWidth:0, innerHeight: 0 })
+    const [onMouseMove, setMouseMove] = useState(false)
     const x = useMotionValue(0)
     const y = useMotionValue(0)
 
     const handleMouseMove = (e) => {
-        
+      const {clientX, clientY} = e
+      x.set(clientX)
+      y.set(clientY)
+
+      console.log(clientX, clientY, x, y)
     }
+
+    const handleMouseEnter = () => {
+      setWindowOffset({ innerWidth: window.innerWidth, innerHeight: window.innerHeight })
+      setMouseMove(true)
+
+      console.log(innerWidth, innerHeight)
+    }
+
+    const { innerWidth, innerHeight } = windowOffset
+
+    const rotatY = useTransform(x, [0, innerWidth], [-30, 30])
+    const rotatX = useTransform(y, [0, innerHeight], [10, -50])
+
   return (
-    <div className="h-screen grid place-items-center">
+    <div className="h-screen grid place-items-center" onMouseMove={handleMouseMove} onMouseEnter= {handleMouseEnter}>
       <div>
         <div className="flex flex-col items-center justify-center gap-y-3 font-light capitalize">
           <div className="flex items-center justify-center">
