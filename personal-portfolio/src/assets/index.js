@@ -37,13 +37,14 @@ export const aboutData = [
   },
 ];
 
-import DownloadLineIcon from "remixicon-react";
-import ArrowLeftSFillIcon from "remixicon-react";
+import DownloadLineIcon from "remixicon-react/DownloadLineIcon";
+import ArrowLeftSFillIcon from "remixicon-react/ArrowLeftSFillIcon";
+
 
 export const downloadIcon = <DownloadLineIcon />;
 export const arrowLeftIcon = <ArrowLeftSFillIcon />;
 
 export const aboutText =
-  " Hi, I'm Henriette, a Frontend Developer & Designer. I specialize in crafting visually stunning and user-friendly websites. Using Figma, I design clean and modern interfaces that prioritize user experience. On the development side, I bring these designs to life with React.js, Next.js, and Tailwind CSS, ensuring fast, responsive, and interactive web applications. Let's create something extraordinary together!"
+  "Hi, I'm Henriette, a Frontend Developer & Designer. I specialize in crafting visually stunning and user-friendly websites. Using Figma, I design clean and modern interfaces that prioritize user experience. On the development side, I bring these designs to life with React.js, Next.js, and Tailwind CSS, ensuring fast, responsive, and interactive web applications. Let's create something extraordinary together!"
   //End of About me
   
